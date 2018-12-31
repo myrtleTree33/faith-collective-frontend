@@ -1,0 +1,9 @@
+.no-borderRadius {
+  border-radius: 0px !important;
+}
+
+.vertical-align-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

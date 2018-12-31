@@ -1,0 +1,11 @@
+.carousel-item {
+  border: 1px solid white;
+}
+
+.carousel-item:hover {
+  border: 1px solid #121212;
+}
+
+.carousel-item-selected {
+  border: 1px solid red;
+}
