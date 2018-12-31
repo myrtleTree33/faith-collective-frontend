@@ -6,7 +6,7 @@ import PageHeader from '../util/PageHeader';
 const Hero = () => {
   return (
     <div>
-      <PageHeader text="Cheaper roses. Better bouquets." />
+      <PageHeader text="Shining light in the darkness." />
     </div>
   );
 };

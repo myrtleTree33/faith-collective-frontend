@@ -105,12 +105,12 @@ class App extends Component {
                 <Link to="/">
                   <span
                     style={{
-                      fontFamily: 'Luckiest Guy, cursive',
+                      fontFamily: 'Permanent Marker, cursive',
                       color: '#000',
                       fontSize: '1.5em'
                     }}
                   >
-                    Rocketflorist.co
+                    FaithCollective.co
                   </span>
                 </Link>
               </Menu.Item>
@@ -248,7 +248,7 @@ class App extends Component {
                     <b>Let us help you</b>
                   </div>
                   <Link to="/geton" className="footerLink">
-                    <div className="gutter-box">License our software</div>
+                    <div className="gutter-box">Custom prints</div>
                   </Link>
                   <Link to="/contact" className="footerLink">
                     <div className="gutter-box">Contact us</div>
@@ -268,7 +268,17 @@ class App extends Component {
                   color: '#212121'
                 }}
               >
-                A member of 21roses.co. Minted in Singapore.
+                <div
+                  style={{
+                    marginBottom: '1.2rem'
+                  }}
+                >
+                  {'"'}That they may know from the rising of the sun, and from
+                  the west, that there is none beside me. I am the Lord, and
+                  there is none else.
+                  {'" - Isaiah 45:6'}
+                </div>
+                <div>Made in Singapore.</div>
               </a>
             </div>
           </Footer>
