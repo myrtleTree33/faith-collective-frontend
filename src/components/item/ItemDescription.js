@@ -6,7 +6,7 @@ import { Divider, Button } from 'antd';
 import { isMobile } from 'react-device-detect';
 
 const ItemDescription = ({ history, item, cartAdd }) => {
-  const { name, price, description } = item;
+  const { id, name, price, description } = item;
   const { value } = price;
   const cost = `$${value}`;
 
@@ -57,10 +57,17 @@ const ItemDescription = ({ history, item, cartAdd }) => {
       <div
         style={{
           margin: '1.5rem 0',
-          minHeight: 300
+          minHeight: isMobile ? undefined : 300
         }}
       >
         {description}
+        <div
+          style={{
+            marginTop: '1.2rem'
+          }}
+        >
+          Item #{id}
+        </div>
       </div>
       <Button type="primary" block size="large" onClick={handleClick}>
         Next

@@ -1,31 +1,27 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import Payment from '../components/payment/Payment';
 
-import Checkout from '../components/checkout/Checkout';
-
-class CheckoutScreen extends Component {
+class PaymentScreen extends Component {
   constructor(props) {
     super(props);
   }
 
   render() {
-    const { cart, history } = this.props;
-
     const onSubmit = deliveryDetails => {
       const order = {
         deliveryDetails,
         cart
       };
       console.log(order);
-      // history.push('/payment');
     };
-
-    return <Checkout cart={cart} onSubmit={onSubmit} />;
+    const { cart } = this.props;
+    return <Payment cart={cart} onSubmit={onSubmit} />;
   }
 }
 
-CheckoutScreen.propTypes = {
+PaymentScreen.propTypes = {
   //   name: PropTypes.string.isRequired
 };
 
@@ -42,4 +38,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(CheckoutScreen);
+)(PaymentScreen);

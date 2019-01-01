@@ -7,6 +7,7 @@ import PageHeader from '../util/PageHeader';
 import CartItem from './CartItem';
 import PersonalMessage from './PersonalMessage';
 import SpecialRequest from './SpecialRequest';
+import { isMobile } from 'react-device-detect';
 
 const Cart = ({ cart, onChange, onRemoveItem, onDone }) => {
   const { items } = cart;
@@ -56,10 +57,12 @@ const Cart = ({ cart, onChange, onRemoveItem, onDone }) => {
       />
       <div
         style={{
-          float: 'right'
+          float: 'right',
+          width: isMobile ? '100%' : undefined
         }}
       >
         <Button
+          block
           type="primary"
           size="large"
           style={{

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link, Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { Icon, Dropdown, Layout, Menu, Popover, Row, Col, Divider } from 'antd';
 import { connect } from 'react-redux';
+import { isMobile } from 'react-device-detect';
 
 import { userLogout } from './redux/actions/userActions';
 
@@ -18,7 +19,7 @@ import './App.css';
 import CheckoutScreen from './screens/Checkout';
 import ItemScreen from './screens/Item';
 import WideReadableDiv from './components/util/WideReadableDiv';
-import { isMobile } from 'react-device-detect';
+import PaymentScreen from './screens/Payment';
 
 const { Header, Content, Footer } = Layout;
 
@@ -107,7 +108,7 @@ class App extends Component {
                     style={{
                       fontFamily: 'Permanent Marker, cursive',
                       color: '#000',
-                      fontSize: '1.5em'
+                      fontSize: '1.2em'
                     }}
                   >
                     FaithCollective.co
@@ -181,6 +182,7 @@ class App extends Component {
               <Route path="/cart" component={CartScreen} />
               <Route path="/about" component={AboutScreen} />
               <Route path="/checkout" component={CheckoutScreen} />
+              <Route path="/payment" component={PaymentScreen} />
               <Route path="/login" component={LoginScreen} />
               <Route path="/signup" component={SignupScreen} />
               <Route path="/contact" component={ContactScreen} />
