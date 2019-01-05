@@ -25,7 +25,7 @@ const Payment = ({ cart, onSubmit }) => {
       <PageHeader text="Payment" />
       <StripeProvider apiKey={STRIPE_APIKEY}>
         <Elements>
-          <PaymentForm />
+          <PaymentForm onSubmit={onSubmit} />
         </Elements>
       </StripeProvider>
     </WideReadableDiv>

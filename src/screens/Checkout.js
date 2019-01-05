@@ -18,7 +18,7 @@ class CheckoutScreen extends Component {
         cart
       };
       console.log(order);
-      // history.push('/payment');
+      history.push({ pathname: '/payment', state: { order } });
     };
 
     return <Checkout cart={cart} onSubmit={onSubmit} />;

@@ -9,14 +9,29 @@ class PaymentScreen extends Component {
   }
 
   render() {
-    const onSubmit = deliveryDetails => {
-      const order = {
-        deliveryDetails,
-        cart
-      };
+    const { history } = this.props;
+
+    // redirect if cart empty --------------
+    if (!this.props.location.state) {
+      history.push('/');
+    }
+
+    if (!this.props.location.state.order) {
+      history.push('/');
+    }
+    // -------------------------------------
+
+    const { order } = this.props.location.state;
+    const { cart } = order;
+
+    const onSubmit = token => {
+      console.log('---------------------');
+      // TODO take payment and submit order
+      console.log(token);
       console.log(order);
+      console.log('---------------------');
     };
-    const { cart } = this.props;
+
     return <Payment cart={cart} onSubmit={onSubmit} />;
   }
 }

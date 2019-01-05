@@ -50,6 +50,7 @@ class ImageCarousel extends Component {
               style={{
                 margin: '.5rem'
               }}
+              key={i}
             >
               <img
                 src={im}

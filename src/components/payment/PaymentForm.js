@@ -3,10 +3,11 @@ import PropTypes from 'prop-types';
 import { Card, Button, AutoComplete } from 'antd';
 import { CardElement, injectStripe } from 'react-stripe-elements';
 
-const Payment = ({ stripe, cart, onSubmit }) => {
+const Payment = ({ stripe, onSubmit }) => {
   const handleTokenReceive = async () => {
     // TODO post info and token to backend
-    console.log(stripe);
+    const { token } = await stripe.createToken({ name: 'Name' });
+    onSubmit(token);
   };
 
   return (
