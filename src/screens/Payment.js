@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Payment from '../components/payment/Payment';
+import { pay } from '../redux/services/cartService';
+import uuidv1 from 'uuid/v1';
 
 class PaymentScreen extends Component {
   constructor(props) {
@@ -12,11 +14,12 @@ class PaymentScreen extends Component {
     const { history } = this.props;
 
     // redirect if cart empty --------------
-    if (!this.props.location.state) {
-      history.push('/');
-    }
-
-    if (!this.props.location.state.order) {
+    if (
+      !this.props.location ||
+      !this.props.location.state ||
+      !this.props.location.state.order ||
+      !this.props.location.state.order.cart
+    ) {
       history.push('/');
     }
     // -------------------------------------
@@ -30,6 +33,7 @@ class PaymentScreen extends Component {
       console.log(token);
       console.log(order);
       console.log('---------------------');
+      pay({ transactionId: uuidv1(), stripeToken: token.id, order });
     };
 
     return <Payment cart={cart} onSubmit={onSubmit} />;

@@ -59,12 +59,13 @@ function cartSetItemQty(state, action) {
 
 function cartAdd(state, action) {
   const stateNew = action.payload;
-  const { id, name, quantity, imgSrc } = stateNew;
+  const { id, name, quantity, imgSrc, price } = stateNew;
   const newItem = {
     id,
     name,
     quantity,
-    imgSrc
+    imgSrc,
+    price
   };
   const newState = {
     ...state,

@@ -6,12 +6,13 @@ import {
 } from '../constants/cartConstants';
 
 export function cartAdd(item) {
-  const { id, quantity, name, landscapeImg } = item;
+  console.log(item);
+  const { id, quantity, name, landscapeImg, price } = item;
   // TODO replace placeholders
   const imgSrc = landscapeImg;
   return {
     type: CART_ADD,
-    payload: { id, name, quantity, imgSrc }
+    payload: { id, name, quantity, imgSrc, price }
   };
 }
 

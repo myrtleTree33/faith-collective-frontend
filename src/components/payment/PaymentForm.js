@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Card, Button, AutoComplete } from 'antd';
+import { Card, Button } from 'antd';
 import { CardElement, injectStripe } from 'react-stripe-elements';
 
 const Payment = ({ stripe, onSubmit }) => {
