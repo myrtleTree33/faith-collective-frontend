@@ -8,7 +8,8 @@ const { Group: InputGroup } = Input;
 const confirm = Modal.confirm;
 
 const CartItem = ({ item, onChange, onRemoveItem }) => {
-  const { id, name, quantity, imgSrc } = item;
+  const { id, name, quantity, imgSrc, price } = item;
+  const { currency, value } = price;
   const handleUpdate = e => {
     onChange(id, e.target.value);
   };
@@ -43,7 +44,9 @@ const CartItem = ({ item, onChange, onRemoveItem }) => {
           <Avatar shape="square" size={64} icon="tags" src={imgSrc} />
         </Col>
         <Col span={14}>
-          <div>{name}</div>
+          <div>
+            {name} (ea. ${value})
+          </div>
         </Col>
         <Col
           span={6}

@@ -55,6 +55,7 @@ const Cart = ({ cart, onChange, onRemoveItem, onDone }) => {
         cart={cart}
         onChange={e => handleChange('specialRequest', e)}
       />
+
       <div
         style={{
           float: 'right',

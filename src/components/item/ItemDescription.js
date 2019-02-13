@@ -70,7 +70,7 @@ const ItemDescription = ({ history, item, cartAdd }) => {
         </div>
       </div>
       <Button type="primary" block size="large" onClick={handleClick}>
-        Next
+        Checkout
       </Button>
     </div>
   );

@@ -1,12 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button } from 'antd';
+import { BrowserView } from 'react-device-detect';
 import PageHeader from '../util/PageHeader';
 
 const Hero = () => {
   return (
     <div>
-      <PageHeader text="Christian prints from Singapore." />
+      <BrowserView>
+        <PageHeader
+          text="Christian prints from Singapore."
+          style={{
+            marginBottom: '2rem'
+          }}
+        />
+      </BrowserView>
     </div>
   );
 };
