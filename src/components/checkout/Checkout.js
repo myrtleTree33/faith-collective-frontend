@@ -8,7 +8,7 @@ import PageHeader from '../util/PageHeader';
 import AddressForm from './AddressForm';
 import CartSummary from './CartSummary';
 
-const Checkout = ({ cart, onSubmit }) => {
+const Checkout = ({ cart, shippingFee, subtotal, total, onSubmit }) => {
   return (
     <WideReadableDiv>
       <PageHeader text="Checkout" />
@@ -19,7 +19,12 @@ const Checkout = ({ cart, onSubmit }) => {
             <AddressForm onSubmit={onSubmit} />
           </Col>
           <Col span={8}>
-            <CartSummary cart={cart} />
+            <CartSummary
+              cart={cart}
+              shippingFee={shippingFee}
+              total={total}
+              subtotal={subtotal}
+            />
           </Col>
         </Row>
       </BrowserView>

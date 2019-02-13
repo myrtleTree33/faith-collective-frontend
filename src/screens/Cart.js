@@ -36,6 +36,7 @@ class CartScreen extends Component {
   render() {
     const { cart, history } = this.props;
     const { handleChange, handleRemoveItem } = this;
+
     return (
       <Cart
         cart={cart}

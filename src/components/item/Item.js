@@ -2,11 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Row, Col } from 'antd';
 
-import MarginDiv from '../util/MarginDiv';
 import ImageCarousel from './ImageCarousel';
 import ItemDescription from './ItemDescription';
 import WideReadableDiv from '../util/WideReadableDiv';
-import { isBrowser, isMobile } from 'react-device-detect';
+import { isMobile } from 'react-device-detect';
 
 const Item = ({ history, item, cartAdd }) => {
   return (

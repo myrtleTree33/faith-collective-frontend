@@ -8,7 +8,13 @@ import SideSpanClear from '../util/SideSpanClear';
 import './CartWidget.css';
 import CartWidgetItem from './CartWidgetItem';
 
-const CartWidget = ({ cart, showCheckoutBtn = true }) => {
+const CartWidget = ({
+  shippingFee,
+  total,
+  subtotal,
+  cart,
+  showCheckoutBtn = true
+}) => {
   const cart2 = cart || {};
   const { items = [] } = cart2;
 
@@ -40,7 +46,7 @@ const CartWidget = ({ cart, showCheckoutBtn = true }) => {
                 marginLeft: '1.4rem'
               }}
             >
-              ${'0.00'}
+              ${parseFloat(subtotal).toFixed(2)}
             </span>
           </SideSpan>
           <SideSpanClear />
@@ -56,7 +62,7 @@ const CartWidget = ({ cart, showCheckoutBtn = true }) => {
                 marginLeft: '1.4rem'
               }}
             >
-              ${'0.00'}
+              ${parseFloat(shippingFee).toFixed(2)}
             </span>
           </SideSpan>
           <SideSpanClear />
@@ -86,7 +92,7 @@ const CartWidget = ({ cart, showCheckoutBtn = true }) => {
                 marginLeft: '1.4rem'
               }}
             >
-              ${'0.00'}
+              ${parseFloat(total).toFixed(2)}
             </span>
           </SideSpan>
           <SideSpanClear />

@@ -11,17 +11,29 @@ class CheckoutScreen extends Component {
 
   render() {
     const { cart, history } = this.props;
+    const shippingFee = 2.0; // TODO stub
+    const subtotal = 28.0; // TODO stub
+    const total = 28.0; // TODO stub
+
+    console.log(cart);
 
     const onSubmit = deliveryDetails => {
       const order = {
         deliveryDetails,
         cart
       };
-      console.log(order);
       history.push({ pathname: '/payment', state: { order } });
     };
 
-    return <Checkout cart={cart} onSubmit={onSubmit} />;
+    return (
+      <Checkout
+        cart={cart}
+        shippingFee={shippingFee}
+        subtotal={subtotal}
+        total={total}
+        onSubmit={onSubmit}
+      />
+    );
   }
 }
 
